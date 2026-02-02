@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Santhoshkumar 💖</title>
+
+<style>
+body {
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 30px;
+    font-size: 2.6em;
+}
+
+.gallery img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 25px;
+    margin: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+button {
+    padding: 15px 35px;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+#yes {
+    background-color: #ff2e63;
+    color: white;
+}
+
+#no {
+    background-color: #444;
+    color: white;
+    position: absolute;
+}
+
+#loveBox {
+    display: none;
+    margin: 35px auto;
+    max-width: 700px;
+    background: rgba(255,255,255,0.2);
+    padding: 25px;
+    border-radius: 25px;
+    font-size: 1.15em;
+}
+
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 24px;
+    animation: floatUp 6s infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-800px); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Hey Santhoshkumar 💕</h1>
+<p>You make my world brighter every single day 😘</p>
+
+<div class="gallery">
+    <img src="Photo1.png">
+    <img src="photo2.png">
+    <img src="Photo3.png">
+</div>
+
+<h2>Will you be my Valentine? 💌</h2>
+
+<button id="yes" onclick="yesClicked()">YES 💖</button>
+<button id="no" onmouseover="moveNo()">NO 🙃</button>
+
+<div id="loveBox">
+    <h2>YAYYYY 💋💖</h2>
+    <p>
+        To the man who I happily call my home. I love you more than words can ever
+        fully explain, but I’ll try anyway. Loving you feels easy, safe, and exciting
+        all at once. Thank you for letting me do what I want, for choosing me over a
+        million times, and for keeping me right by your side. Thank you for
+        understanding me, for your shoulder when I cry, and for the kisses that make
+        me feel safe and cute. Thank you for letting me play with you like a kid,
+        dadddyyyy!! With you, I laugh more, dream bigger, and feel truly understood.
+        You are my comfort, my happiness, and my forever favorite person. 💖😘
+    </p>
+</div>
+
+<!-- Background Music -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g"
+allow="autoplay">
+</iframe>
+
+<script>
+let noCount = 0;
+
+function moveNo() {
+    const no = document.getElementById("no");
+    no.style.left = Math.random() * (window.innerWidth - 120) + "px";
+    no.style.top = Math.random() * (window.innerHeight - 120) + "px";
+    noCount++;
+
+    if (noCount >= 4) {
+        yesClicked();
+    }
+}
+
+function yesClicked() {
+    document.getElementById("loveBox").style.display = "block";
+    document.getElementById("no").style.display = "none";
+
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = Math.random() > 0.5 ? "💖" : "😘";
+        heart.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+    }, 300);
+}
+</script>
+
+</body>
+</html>
